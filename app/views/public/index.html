@@ -1,3 +1,30 @@
+<!--   <link href="stylesheets/jquery.cssemoticons.css" media="screen" rel="stylesheet" type="text/css" />
+  <script src="javascripts/jquery-1.4.2.min.js" type="text/javascript"></script>
+   -->
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+   /*   $('.message').emoticonize({
+      	//delay: 8000,
+        //animate: false
+        //exclude: 'pre, code, .no-emoticons'
+      });
+    */
+      $(document).on("click", '#send', function() {
+      	// $("#chat").children().last().css("background-color","yellow").focus();
+        setTimeout(renderEmoticons, 500);
+		
+      	//alert($(".message").html());
+      });
+
+      function renderEmoticons() {
+      	$('.message').emoticonize({ 
+      		animate: true
+      	});
+      }
+
+    })
+  </script>
 <div id="chat" class="well" data-uri="<%= request.host %>:<%= request.port %>/websocket">
 </div>
 
@@ -6,5 +33,15 @@
     <input type="text" class="input-medium" id="user_name">
     <input type="text" class="input-xlarge" id="message">
     <button id="send" class="btn btn-primary">Send</button>
+    <div class="message">
+  		:-) :o) :c) :^) :-D :-( :-9 ;-) :-P :-p </br> 
+  		:-Þ :-b :-O :-/ :-X :-# :'( B-) 8-) ;*( </br>
+  		:-* :-\ ?-) : )  : ]  = ]  = )  8 )  : } : D</br> 
+      8 D  X D  x D  = D  : (  : [  : {  = (  ; )  ; ] </br> 
+      = (  ; )  ; ]   ; D  : P  : p  = P  = p  : b : |  </br>
+      : Þ  : O  8 O  : /  = /  : S  : #  : X  B ) : \ </br> 
+      = \  : *  : &gt;  : &lt;</br> 
+	</div>
+
   </fieldset>
 </div>
